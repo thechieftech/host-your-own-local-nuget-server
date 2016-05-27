@@ -1,0 +1,24 @@
+﻿@model TheWebApp.Models.FormVm
+@{
+    ViewBag.Title = "The Web App";
+}
+<div class="row">
+    <div class="col-md-12">
+        <h2>The Web App</h2>
+        <form class="form-horizontal" action="/Home/Index" method="post">
+            <div class="form-group">
+                <label for="theName" class="col-sm-2 control-label">The name</label>
+                <input type="text" value="" class="form-control col-sm-10" id="theName" name="theName" />
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-primary">Say my name</button>
+                </div>
+            </div>
+        </form>
+        @if(Model != null)
+        {
+            <div class="alert alert-success">@(Model.Result)</div>
+        }
+    </div>
+</div>
